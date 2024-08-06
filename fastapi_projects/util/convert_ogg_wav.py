@@ -1,8 +1,5 @@
 import soundfile as sf   #   pip install pysoundfile
 
-
-# узнать что вообще тут происходит
-
 def converting_from_ogg_to_wav(input_file: str, output_file: str):
     data, samplerate = sf.read(input_file)
     sf.write(output_file, data, samplerate)

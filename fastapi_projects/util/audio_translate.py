@@ -12,7 +12,9 @@ def converting_to_text(audio_name_orig: str):
         audio_data = r.record(source)
 
     try:
-        print("Google Recognition: " + r.recognize_google(audio_data))
+        # print("Google Recognition: " + r.recognize_google(audio_data))
+        text = r.recognize_google(audio_data)
+        return text
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
