@@ -10,7 +10,7 @@ from util.main_audio import all_converting
 
 router = APIRouter()
 
-@router.post("upload-file")
+@router.post("/upload-file")
 async def create_upload_file(file: UploadFile = File(...)):
 
     # !!!!!!!!!!!!!!!!!!!!!make more optimized file paths!!!!!!!!!!!!!!!!
@@ -24,3 +24,7 @@ async def create_upload_file(file: UploadFile = File(...)):
 
     return converted_text
 
+
+@router.get("/test-endpoint")
+async def test_function():
+    return {"data": "test-completed:))"}
