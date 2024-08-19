@@ -24,7 +24,7 @@ def convert_audio_to_text(output_file_path: str):
         audio_data = r.record(source)
 
     try:
-        text = r.recognize_google(audio_data)
+        text = r.recognize_google(audio_data, language="ru-RU")
         return text
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
